@@ -3,6 +3,67 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 extension WidgetExt on Widget {
+  AppBar intoAppBar({
+    Key? key,
+    Widget? leading,
+    bool automaticallyImplyLeading = true,
+    List<Widget>? actions,
+    Widget? flexibleSpace,
+    PreferredSizeWidget? bottom,
+    double? elevation,
+    Color? shadowColor,
+    ShapeBorder? shape,
+    Color? backgroundColor,
+    Color? foregroundColor,
+    Brightness? brightness,
+    IconThemeData? iconTheme,
+    IconThemeData? actionsIconTheme,
+    TextTheme? textTheme,
+    bool primary = true,
+    bool? centerTitle,
+    bool excludeHeaderSemantics = false,
+    double? titleSpacing,
+    double toolbarOpacity = 1.0,
+    double bottomOpacity = 1.0,
+    double? toolbarHeight,
+    double? leadingWidth,
+    bool? backwardsCompatibility,
+    TextStyle? toolbarTextStyle,
+    TextStyle? titleTextStyle,
+    SystemUiOverlayStyle? systemOverlayStyle,
+
+  }) {
+    return AppBar(
+      key: key,
+      leading: leading,
+      automaticallyImplyLeading: automaticallyImplyLeading,
+      title: this,
+      actions: actions,
+      flexibleSpace: flexibleSpace,
+      bottom: bottom,
+      elevation: elevation,
+      shadowColor: shadowColor,
+      shape: shape,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
+      brightness: brightness,
+      iconTheme: iconTheme,
+      actionsIconTheme: actionsIconTheme,
+      textTheme: textTheme,
+      primary: primary,
+      centerTitle: centerTitle,
+      excludeHeaderSemantics: excludeHeaderSemantics,
+      titleSpacing: titleSpacing,
+      toolbarOpacity: toolbarOpacity,
+      bottomOpacity: bottomOpacity,
+      toolbarHeight: toolbarHeight,
+      leadingWidth: leadingWidth,
+      backwardsCompatibility: backwardsCompatibility,
+      toolbarTextStyle: toolbarTextStyle,
+      titleTextStyle: titleTextStyle,
+      systemOverlayStyle: systemOverlayStyle,
+    );
+  }
   Positioned intoPositioned({
     Key? key,
     double? left,
@@ -20,6 +81,38 @@ extension WidgetExt on Widget {
       bottom: bottom,
       width: width,
       height: height,
+      child: this,
+    );
+  }
+
+  ElevatedButton intoElevatedButton({
+    Key? key,
+    required VoidCallback? onPressed,
+    VoidCallback? onLongPress,
+    ButtonStyle? style,
+    FocusNode? focusNode,
+    bool autofocus = false,
+    Clip clipBehavior = Clip.none,
+  }) {
+    return ElevatedButton(
+      key: key,
+      onPressed: onPressed,
+      onLongPress: onLongPress,
+      style: style,
+      focusNode: focusNode,
+      autofocus: autofocus,
+      clipBehavior: clipBehavior,
+      child: this,
+    );
+  }
+
+  Expanded intoExpanded({
+    Key? key,
+    int flex = 1,
+  }) {
+    return Expanded(
+      key: key,
+      flex: flex,
       child: this,
     );
   }
@@ -817,66 +910,6 @@ extension WidgetListExt<T extends Widget> on List<T> {
     );
   }
 
-  AppBar intoAppBar({
-    Key? key,
-    Widget? leading,
-    bool automaticallyImplyLeading = true,
-    Widget? title,
-    Widget? flexibleSpace,
-    PreferredSizeWidget? bottom,
-    double? elevation,
-    Color? shadowColor,
-    ShapeBorder? shape,
-    Color? backgroundColor,
-    Color? foregroundColor,
-    Brightness? brightness,
-    IconThemeData? iconTheme,
-    IconThemeData? actionsIconTheme,
-    TextTheme? textTheme,
-    bool primary = true,
-    bool? centerTitle,
-    bool excludeHeaderSemantics = false,
-    double? titleSpacing,
-    double toolbarOpacity = 1.0,
-    double bottomOpacity = 1.0,
-    double? toolbarHeight,
-    double? leadingWidth,
-    bool? backwardsCompatibility,
-    TextStyle? toolbarTextStyle,
-    TextStyle? titleTextStyle,
-    SystemUiOverlayStyle? systemOverlayStyle,
-  }) {
-    return AppBar(
-      key: key,
-      leading: leading,
-      automaticallyImplyLeading: automaticallyImplyLeading,
-      title: title,
-      actions: this,
-      flexibleSpace: flexibleSpace,
-      bottom: bottom,
-      elevation: elevation,
-      shadowColor: shadowColor,
-      shape: shape,
-      backgroundColor: backgroundColor,
-      foregroundColor: foregroundColor,
-      brightness: brightness,
-      iconTheme: iconTheme,
-      actionsIconTheme: actionsIconTheme,
-      textTheme: textTheme,
-      primary: primary,
-      centerTitle: centerTitle,
-      excludeHeaderSemantics: excludeHeaderSemantics,
-      titleSpacing: titleSpacing,
-      toolbarOpacity: toolbarOpacity,
-      bottomOpacity: bottomOpacity,
-      toolbarHeight: toolbarHeight,
-      leadingWidth: leadingWidth,
-      backwardsCompatibility: backwardsCompatibility,
-      toolbarTextStyle: toolbarTextStyle,
-      titleTextStyle: titleTextStyle,
-      systemOverlayStyle: systemOverlayStyle,
-    );
-  }
 
   Scaffold intoScaffold({
     Key? key,
